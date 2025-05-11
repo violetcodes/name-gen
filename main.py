@@ -97,7 +97,7 @@ def get_categories(request: Request):
     :return: List of categories.
     """
     link_gen = "<a href='/generate'>/generate</a>" 
-    out = "<br>".join(_get_new_name._available_category)
+    out = "<br>".join([f"<a href='/generate/any/{w}'>{w}</a>" for w in _get_new_name._available_category])
 
     return serve_index(request, out, link_gen) 
 
