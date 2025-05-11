@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NameGen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;            ;
+            flex-direction: column; /* Stack elements vertically */
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+        #message {
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #subtitle {
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-style: italic;
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="/">🏡 Name Generator</a></h1>
+    <div id="message">{{ message|safe }}</div>  <!-- Ensuring that message is not escaped -->
+    <br>
+    <div id="subtitle">{{ subtitle|safe }}</div>  <!-- Ensuring that subtitle is not escaped -->
+</body>
+</html>
