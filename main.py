@@ -112,7 +112,7 @@ def generate_name_path(request: Request, starts_with: str="any", category: str="
     """
 
     link_cat = "<a href='/categories'>/categories</a>" 
-    link_gen_random = "<a href='/generate/any/{category}'>/generate</a>" 
+    link_gen_random = "<a href='/generate/any/any'>/generate</a>" 
 
     
 
