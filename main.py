@@ -119,12 +119,12 @@ def generate_name_path(request: Request, starts_with: str="any", category: str="
     starts_with = None if starts_with == "any" else starts_with
     category = None if category == "any" else category
 
-    link_gen_last = f"<a href='/generate/any/{category}'>/generate</a>" 
+    link_gen_last = "<a href='/generate/any/{category}'>/generate</a>" 
     
-    endpoint = f"Endpoints: {link_cat}, last: {link_gen_last}, random: {link_gen_random}"
+    a, category = get_new_name(starts_with, category)
+    endpoint = f"Endpoints: {link_cat}, last: {link_gen_last.format(category=category)}, random: {link_gen_random}"
 
-    a, b = get_new_name(starts_with, category)
-    return serve_index(request, a, f"{b}<br>{endpoint}") 
+    return serve_index(request, a, f"{category}<br>{endpoint}") 
 
 if __name__ == "__main__":
     import uvicorn
