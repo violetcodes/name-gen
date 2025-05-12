@@ -110,17 +110,18 @@ def generate_name_path(request: Request, starts_with: str="any", category: str="
     :param category: Category to match.
     :return: Generated name.
     """
-    parse_starts_with = starts_with.replace("%2C", ",") 
-    parse_category = category.replace("%2C", ",") 
 
     link_cat = "<a href='/categories'>/categories</a>" 
-    link_gen = "<a href='/generate'>/generate</a>" 
+    link_gen_random = "<a href='/generate/any/{category}'>/generate</a>" 
 
-    endpoint = f"Endpoints: {link_cat}, {link_gen}"
     
 
     starts_with = None if starts_with == "any" else starts_with
     category = None if category == "any" else category
+
+    link_gen_last = f"<a href='/generate/any/{category}'>/generate</a>" 
+    
+    endpoint = f"Endpoints: {link_cat}, last: {link_gen_last}, random: {link_gen_random}"
 
     a, b = get_new_name(starts_with, category)
     return serve_index(request, a, f"{b}<br>{endpoint}") 
