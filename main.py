@@ -30,8 +30,8 @@ def get_new_name(starts_with: str = None, category: str = None):
 
 app = FastAPI()
 
-RATE_LIMIT = 10
-WINDOW_SIZE = 60  # in seconds
+RATE_LIMIT = 100
+WINDOW_SIZE = 600  # in seconds
 
 # IP -> list of timestamps
 ip_request_log = defaultdict(list)
